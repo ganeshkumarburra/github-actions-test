@@ -8,6 +8,12 @@ jobs:
         run: |
           pwd
           ls -a
+      - name: Cloning files
+        run: |
+          git --version
+          git clone git@github.com:ganeshkumarburra/github-actions-test.git
+          pwd
+          ls -a
       - name: Greet the Person
         id: greet
         uses: actions/hello-world-javascript-action@v1.1
