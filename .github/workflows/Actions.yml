@@ -1,8 +1,5 @@
 name: Actions Workflow
-on:
-  push:
-  pull_request:
-    types: [closed, opened, assigned, reopened, assigned]
+on: push
 jobs:
   simple_javascript_action:
     runs-on: ubuntu-latest
