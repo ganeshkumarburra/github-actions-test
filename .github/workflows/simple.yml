@@ -18,8 +18,9 @@ jobs:
 
   run-windows-command:
     runs-on: windows-latest
+    needs: [run-shell-command]
     steps:
-      - name: Get PoerShell Directory
+      - name: Get PowerShell Directory
         run: Get-Location
       - name: Get shell directory
         run: pwd
