@@ -12,7 +12,7 @@ jobs:
           node --version
       - name: python shell command
         run: |
-          import platoform
+          import platform
           print(platform.processor())
         shell: python
 
