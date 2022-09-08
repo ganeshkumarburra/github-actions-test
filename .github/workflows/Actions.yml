@@ -8,10 +8,10 @@ jobs:
         run: |
           pwd
           ls -a
-      - name: Cloning files
+      - name: Cloning with Github checkout action
+        uses: actions/checkout@v3.0.2
+      - name: Listing files after checkout
         run: |
-          git --version
-          git clone git@github.com:ganeshkumarburra/github-actions-test.git
           pwd
           ls -a
       - name: Greet the Person
