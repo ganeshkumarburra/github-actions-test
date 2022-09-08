@@ -10,3 +10,8 @@ jobs:
         run: |
           npm --version
           node --version
+      - name: python shell command
+        run: |
+          import platoform
+          print(platform.processor())
+        shell: python
