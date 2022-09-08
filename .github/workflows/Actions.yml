@@ -10,4 +10,4 @@ jobs:
         with:
           who-to-greet: Ganesh
       - name: Log the Greet time
-        run: "${{$steps.greet.outputs.time}}"
+        run: "${{steps.greet.outputs.time}}"
