@@ -9,7 +9,7 @@ jobs:
   simple_javascript_action:
     runs-on: ubuntu-latest
     steps:
-      - name: List files
+      - name: List all files
         run: |
           pwd
           ls -a
