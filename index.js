@@ -1,2 +1,2 @@
 console.log("Hello console log");
-console.log("issue testing");
+console.log("issue testing new");
