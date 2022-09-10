@@ -1,8 +1,5 @@
 name: Shell Commands
-on:
-  schedule:
-    - cron: "*/5 * * * *"
-    - cron: "*/6 * * * *"
+on: repository_dispatch
 jobs:
   run-shell-command:
     runs-on: ubuntu-latest
