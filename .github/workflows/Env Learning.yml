@@ -27,7 +27,7 @@ jobs:
           git add -A
           git commit -m "Random number added"
           git remote -v
-          git push
+          git push "https://${GITHUB_ACTOR}:${{secrets.GITHUB_TOKEN}}@github.com/${GITHUB_REPOSITORY}.git"
 
       - name: Create issue using REST API
         run: |
