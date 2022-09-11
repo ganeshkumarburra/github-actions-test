@@ -13,7 +13,7 @@ jobs:
           PASSPHRASE: ${{secrets.PASSPHRASE}}
         run: gpg --quiet --batch --yes --decrypt --passphrase=$PASSPHRASE --output $HOME/secret.txt secret.txt.gpg
       - name: Decrypted data
-        run: cat secret.txt
+        run: cat $HOME/secret.txt
   create_issue:
     runs-on: ubuntu-latest
     permissions:
