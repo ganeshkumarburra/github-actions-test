@@ -1,4 +1,4 @@
-name: Evironment variables Workflow
+name: Evironment variables
 on: push
 env:
   WF_ENV: Available for all jobs
