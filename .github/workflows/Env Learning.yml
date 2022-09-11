@@ -9,12 +9,17 @@ jobs:
     permissions:
       issues: write
     steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
+          fetch-depth: 0 # otherwise,
       - name: Adding Random Number
         run: |
           pwd
           ls
-          git init
-          git remote add origin "https://${GITHUB_ACTOR}:${{secrets.GITHUB_TOKEN}}@github.com/${GITHUB_REPOSITORY}.git"
+          git remote -v
+          git config remote.origin.url https://github.com/${GITHUB_ACTOR}/${GITHUB_REPOSITORY}.git
+          git remote -v
           git config --global user.email "my-bot@bot.com"
           git config --global user.name "my-bot"
           git fetch
