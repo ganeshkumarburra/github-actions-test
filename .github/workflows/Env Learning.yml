@@ -26,6 +26,7 @@ jobs:
           ls
           git add -A
           git commit -m "Random number added"
+          git remote -v
           git push
 
       - name: Create issue using REST API
