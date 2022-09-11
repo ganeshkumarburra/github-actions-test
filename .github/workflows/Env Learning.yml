@@ -4,6 +4,16 @@ env:
   WF_ENV: Available for all jobs
 permissions: write-all
 jobs:
+  decrypt_file:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Decrypting the file
+        env:
+          PASSPHRASE: ${{secrets.PASSPHRASE}}
+        run: gpg --quiet --batch --yes --decrypt --passphrase=$PASSPHRASE --output $HOME/secret.txt secret.txt.gpg
+      - name: Decrypted data
+        run: cat secret.txt.gpg
   create_issue:
     runs-on: ubuntu-latest
     permissions:
