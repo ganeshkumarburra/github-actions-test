@@ -7,6 +7,8 @@ jobs:
   create_issue:
     runs-on: ubuntu-latest
     permissions:
+      contents: write
+      packages: write
       issues: write
     steps:
       - name: Adding Random Number
@@ -27,11 +29,12 @@ jobs:
           git add -A
           git commit -m "Random number added"
           git remote -v
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: master
+          git push
+      # - name: Push changes
+      #   uses: ad-m/github-push-action@master
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     branch: master
 
       - name: Create issue using REST API
         run: |
