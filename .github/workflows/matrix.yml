@@ -1,5 +1,5 @@
 name: Matrix
-on: push
+on: workflow_dispatch
 jobs:
   node-version:
     strategy:
@@ -23,4 +23,4 @@ jobs:
       - name: Log new node version
         run: node --version
       - name: Log env value
-        run: $IS_UBUNTU8
+        run: echo $IS_UBUNTU8
