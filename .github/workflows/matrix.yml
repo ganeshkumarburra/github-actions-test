@@ -12,7 +12,7 @@ jobs:
             is_ubuntu8: "true"
     runs-on: ${{matrix.os}}
     env:
-      IS_UBUNTU8: ${{matrix.is_ubuntu8 == "true" }}
+      IS_UBUNTU8: ${{matrix.is_ubuntu8}}
     steps:
       - name: Log initial node version
         run: node --version
