@@ -18,6 +18,8 @@ jobs:
         with:
           entrypoint: "/usr/local/bin/node"
           args: -v
+      - name: Cloning the repo
+        uses: actions/checkout@v2
       - name: Runing script
         uses: docker://node:10
         with:
