@@ -14,6 +14,6 @@ jobs:
           - "27017:27017"
     steps:
       - name: Post a user
-        run: 'curl --location --request POST ''http://localhost:3001/api/users'' --header ''Content-Type: application/json'' --data-raw ''{"username":"Ganesh","address":"Kothavaripalle"}'
+        run: 'curl --location --request POST "http://localhost:3001/api/users" --header "Content-Type: application/json" --data-raw "{"username":"Ganesh","address":"Kothavaripalle"}'
       - name: Get a users
         run: curl http://localhost:3001/api/users
