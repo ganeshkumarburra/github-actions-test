@@ -12,8 +12,6 @@ jobs:
         image: mongo
         ports:
           - "27017:27017"
-        volumes:
-          - ~/apps/mongo:/data/db`
     steps:
       - name: Get a users
         run: curl http://localhost:3001/api/users
