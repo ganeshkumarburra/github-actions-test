@@ -1,6 +1,28 @@
 name: Container
 on: push
 jobs:
+  docker-container-insteps:
+    runs-on: ubuntu-latest
+    container:
+      image: node:14
+    steps:
+      - name: Main container node version
+        run: node --version
+      - name: Container in steps with echo
+        uses: docker://node:12
+        with:
+          entrypoint: "/bin/echo"
+          args: "Hello world"
+      - name: Container in steps with node version logging
+        uses: docker://node:10
+        with:
+          entrypoint: "/usr/local/bin/node"
+          args: -v
+      - name: Runing script
+        uses: docker://node:10
+        with:
+          entrypoint: "./script.sh"
+          args: "Roopa"
   docker-container:
     runs-on: ubuntu-latest
     services:
@@ -13,7 +35,5 @@ jobs:
         ports:
           - "27017:27017"
     steps:
-      - name: Post a user
-        run: 'curl --location --request POST "http://localhost:3001/api/users" --header "Content-Type: application/json" --data-raw "{"username":"Ganesh","address":"Kothavaripalle"}"'
       - name: Get a users
         run: curl http://localhost:3001/api/users
