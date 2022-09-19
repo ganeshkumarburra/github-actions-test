@@ -1,5 +1,5 @@
 name: Evironment variables
-on: pull_request
+on: workflow_dispatch
 env:
   WF_ENV: Available for all jobs
 permissions: write-all
