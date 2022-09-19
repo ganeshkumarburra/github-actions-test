@@ -22,7 +22,6 @@ jobs:
       issues: write
     steps:
       - name: Adding Random Number
-        if: false
         run: |
           pwd
           ls
