@@ -10,6 +10,9 @@ jobs:
         run: |
           npm --version
           node --version
+      - name: checkout
+        uses: actions/checkout@v2
+      - run: git branch
       - name: python shell command
         run: |
           import platform
